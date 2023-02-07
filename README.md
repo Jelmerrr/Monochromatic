@@ -1,4 +1,4 @@
 # Monochromatic
-A simple game aobut color
+A simple game abut color
 
 Proof of concept version
