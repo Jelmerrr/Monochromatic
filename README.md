@@ -1,4 +1,4 @@
 # Monochromatic
-A simple game abut color
+A simple game about color
 
 Proof of concept version
