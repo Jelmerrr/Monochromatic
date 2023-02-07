@@ -321,7 +321,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 63b9fb47fd698b479dab41bd9f767543
+      Hash: 6b15f593d05f861cd10e03d2ddc8b3b8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObjectColorHandler
