@@ -32,9 +32,9 @@ public class ShootController : MonoBehaviour
                 {
                     ChangeMaterial(tempObject);
                 }    
-                if(tempObject.GetComponent<ObjectColorHandler>().isSpecial == true)
+                else if(tempObject.GetComponent<ObjectColorHandler>().isNormal == false)
                 {
-                    //Do something with it.
+                    //tempObject.GetComponent<BlueCubeBehavior>().BlueSwap();
                 }
             }
             else
@@ -47,13 +47,17 @@ public class ShootController : MonoBehaviour
 
     private void ChangeMaterial(GameObject gameObject)
     {
-        if (gameObject.GetComponent<ObjectColorHandler>().isWhite == true)
+        string typeRef = gameObject.GetComponent<ObjectColorHandler>().type.ToString();
+        
+        if (typeRef == "NormalWhite")
         {
             gameObject.GetComponent<MeshRenderer>().material = blackReference;
+            gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
         }
-        if (gameObject.GetComponent<ObjectColorHandler>().isWhite == false)
+        if (typeRef == "NormalBlack")
         {
             gameObject.GetComponent<MeshRenderer>().material = whiteReference;
+            gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
         }
     }
 }

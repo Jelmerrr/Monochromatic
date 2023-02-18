@@ -5,37 +5,45 @@ using UnityEngine;
 
 public class ObjectColorHandler : MonoBehaviour
 {
-    public bool isWhite;
+    //Variables
     public bool isNormal;
-    public bool isSpecial;
-    public UnityEngine.Material materialReference;
+    public string materialType;
+    UnityEngine.Material materialReference;
     public string materialName;
-    
+
+    public enum blockType
+    {
+        NormalWhite,
+        NormalBlack,
+        Blue,
+        Red
+    }
+
+    public blockType type;
 
     private void Start()
     {
+        NormalStateReload();
     }
     private void Update()
     {
-        materialReference = this.GetComponent<MeshRenderer>().material;
-        materialName = materialReference.name;
-
         if (materialName == "WhiteMaterial (Instance)" || materialName == "BlackMaterial (Instance)")
         {
             isNormal = true;
         }
-        else
-        {
-            isSpecial = true;
-        }
+    }
 
+    public void NormalStateReload()
+    {
+        materialReference = this.GetComponent<MeshRenderer>().material;
+        materialName = materialReference.name;
         if (materialName == "WhiteMaterial (Instance)")
         {
-            isWhite = true;
+            type = blockType.NormalWhite;
         }
-        else
+        else if(materialName == "BlackMaterial (Instance)")
         {
-            isWhite = false;
+            type = blockType.NormalBlack;
         }
     }
 }
