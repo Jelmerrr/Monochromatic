@@ -19,7 +19,7 @@ public class ObjectColorHandler : MonoBehaviour
         Red
     }
 
-    public blockType type;
+    public blockType typeReference;
 
     private void Start()
     {
@@ -37,13 +37,23 @@ public class ObjectColorHandler : MonoBehaviour
     {
         materialReference = this.GetComponent<MeshRenderer>().material;
         materialName = materialReference.name;
-        if (materialName == "WhiteMaterial (Instance)")
+        if (isNormal == true)
         {
-            type = blockType.NormalWhite;
+            if (materialName == "WhiteMaterial (Instance)")
+            {
+                typeReference = blockType.NormalWhite;
+            }
+            else if(materialName == "BlackMaterial (Instance)")
+            {
+                typeReference = blockType.NormalBlack;
+            }
         }
-        else if(materialName == "BlackMaterial (Instance)")
+        else if (isNormal == false)
         {
-            type = blockType.NormalBlack;
+            if (materialName == "BlueMaterial (Instance)")
+            {
+                typeReference = blockType.Blue;
+            }
         }
     }
 }

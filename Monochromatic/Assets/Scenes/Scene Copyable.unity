@@ -559,9 +559,7 @@ MonoBehaviour:
   isNormal: 0
   materialType: 
   materialName: 
-  whiteReference: {fileID: 0}
-  blackReference: {fileID: 0}
-  type: 0
+  typeReference: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,8 +763,8 @@ GameObject:
   - component: {fileID: 841705953}
   - component: {fileID: 841705955}
   - component: {fileID: 841705956}
-  m_Layer: 0
-  m_Name: Initial
+  m_Layer: 3
+  m_Name: Blue1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -780,8 +778,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841705948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 158916398}
@@ -865,9 +863,7 @@ MonoBehaviour:
   isNormal: 0
   materialType: 
   materialName: 
-  whiteReference: {fileID: 0}
-  blackReference: {fileID: 0}
-  type: 2
+  typeReference: 0
 --- !u!114 &841705955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,6 +877,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnabled: 1
+  blueCubeID: 
+  normalBlue: {r: 0, g: 0, b: 0, a: 0}
+  alphaBlue: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &841705956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,7 +893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0, g: 1, b: 1, a: 1}
   outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
@@ -1012,9 +1011,7 @@ MonoBehaviour:
   isNormal: 0
   materialType: 
   materialName: 
-  whiteReference: {fileID: 0}
-  blackReference: {fileID: 0}
-  type: 0
+  typeReference: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,8 +1308,8 @@ GameObject:
   - component: {fileID: 1164924256}
   - component: {fileID: 1164924260}
   - component: {fileID: 1164924261}
-  m_Layer: 0
-  m_Name: Initial (1)
+  m_Layer: 3
+  m_Name: Blue2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1326,8 +1323,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164924253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.73, y: 0, z: 3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1, y: -1, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 158916398}
@@ -1348,9 +1345,7 @@ MonoBehaviour:
   isNormal: 0
   materialType: 
   materialName: 
-  whiteReference: {fileID: 0}
-  blackReference: {fileID: 0}
-  type: 2
+  typeReference: 0
 --- !u!65 &1164924257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1427,6 +1422,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnabled: 0
+  blueCubeID: 
+  normalBlue: {r: 0, g: 0, b: 0, a: 0}
+  alphaBlue: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1164924261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,7 +1438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0, g: 1, b: 1, a: 1}
   outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
@@ -1732,9 +1730,7 @@ MonoBehaviour:
   isNormal: 0
   materialType: 
   materialName: 
-  whiteReference: {fileID: 0}
-  blackReference: {fileID: 0}
-  type: 0
+  typeReference: 0
 --- !u!65 &1535539373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1848,9 +1844,7 @@ MonoBehaviour:
   isNormal: 0
   materialType: 
   materialName: 
-  whiteReference: {fileID: 0}
-  blackReference: {fileID: 0}
-  type: 0
+  typeReference: 0
 --- !u!65 &1736595633
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2116,9 +2110,7 @@ MonoBehaviour:
   isNormal: 0
   materialType: 
   materialName: 
-  whiteReference: {fileID: 0}
-  blackReference: {fileID: 0}
-  type: 0
+  typeReference: 0
 --- !u!1 &1824565825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,9 +2558,7 @@ MonoBehaviour:
   isNormal: 0
   materialType: 
   materialName: 
-  whiteReference: {fileID: 0}
-  blackReference: {fileID: 0}
-  type: 0
+  typeReference: 0
 --- !u!65 &1998197903
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2745,9 +2735,7 @@ MonoBehaviour:
   isNormal: 0
   materialType: 
   materialName: 
-  whiteReference: {fileID: 0}
-  blackReference: {fileID: 0}
-  type: 0
+  typeReference: 0
 --- !u!1 &2089997131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,9 +2786,7 @@ MonoBehaviour:
   isNormal: 0
   materialType: 
   materialName: 
-  whiteReference: {fileID: 0}
-  blackReference: {fileID: 0}
-  type: 0
+  typeReference: 0
 --- !u!65 &2089997134
 BoxCollider:
   m_ObjectHideFlags: 0
