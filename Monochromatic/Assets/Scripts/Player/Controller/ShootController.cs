@@ -15,31 +15,22 @@ public class ShootController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Bit shift the index of the layer (8) to get a bit mask
             int layerMask = 1 << 8;
-
-            // This would cast rays only against colliders in layer 8.
-            // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-            layerMask = ~layerMask;
-
+            layerMask = ~layerMask; //Layermask ignore player.
             RaycastHit hit;
-            // Does the ray intersect any objects excluding the player layer
             if (Physics.Raycast(transform.position, cameraView.transform.forward, out hit, Mathf.Infinity, layerMask))
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                 tempObject = hit.collider.gameObject;
-                if (tempObject.GetComponent<ObjectColorHandler>().isNormal == true)
+                if (tempObject.GetComponent<ObjectColorHandler>().isNormal == true) //If object shot is white/black handle normal procedure.
                 {
                     ChangeMaterial(tempObject);
                 }    
-                else if(tempObject.GetComponent<ObjectColorHandler>().isNormal == false)
+                else if(tempObject.GetComponent<ObjectColorHandler>().isNormal == false) //Add special block handlers below here.
                 {
-                    
-                    if(tempObject.GetComponent<ObjectColorHandler>().typeReference == ObjectColorHandler.blockType.Blue)
+                    if(tempObject.GetComponent<ObjectColorHandler>().typeReference == ObjectColorHandler.blockType.Blue) //Blue object handler.
                     {
                         tempObject.GetComponent<BlueCubeBehavior>().BlueSwap();
-                    }
-                    
+                    }              
                 }
             }
             else
@@ -50,19 +41,58 @@ public class ShootController : MonoBehaviour
         }
     }
 
-    private void ChangeMaterial(GameObject gameObject)
+    private void ChangeMaterial(GameObject gameObject) //Handles black and white swapping.
     {
         string typeRef = gameObject.GetComponent<ObjectColorHandler>().typeReference.ToString();
         
         if (typeRef == "NormalWhite")
         {
-            gameObject.GetComponent<MeshRenderer>().material = blackReference;
-            gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
+            if (gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == false)
+            {
+                gameObject.GetComponent<MeshRenderer>().material = blackReference;
+                gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
+            }
+
+            if(gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == true)
+            {
+                string shotFamily = gameObject.GetComponent<ObjectColorHandler>().familyID;
+                ObjectColorHandler[] yep = Resources.FindObjectsOfTypeAll<ObjectColorHandler>();         
+                for (int i = 0; i < yep.Length; i++)
+                {
+                    if(yep[i].hasFamilyBlock == true)
+                    {
+                        if(yep[i].familyID == shotFamily)
+                        {
+                            yep[i].gameObject.GetComponent<MeshRenderer>().material = blackReference;
+                            yep[i].gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
+                        }
+                    }
+                }
+            }
         }
         if (typeRef == "NormalBlack")
         {
-            gameObject.GetComponent<MeshRenderer>().material = whiteReference;
-            gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
+            if (gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == false)
+            {
+                gameObject.GetComponent<MeshRenderer>().material = whiteReference;
+                gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
+            }
+            if (gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == true)
+            {
+                string shotFamily = gameObject.GetComponent<ObjectColorHandler>().familyID;
+                ObjectColorHandler[] yep = Resources.FindObjectsOfTypeAll<ObjectColorHandler>();
+                for (int i = 0; i < yep.Length; i++)
+                {
+                    if (yep[i].hasFamilyBlock == true)
+                    {
+                        if (yep[i].familyID == shotFamily)
+                        {
+                            yep[i].gameObject.GetComponent<MeshRenderer>().material = whiteReference;
+                            yep[i].gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
+                        }
+                    }
+                }
+            }
         }
     }
 }

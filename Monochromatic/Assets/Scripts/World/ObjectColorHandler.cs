@@ -10,6 +10,8 @@ public class ObjectColorHandler : MonoBehaviour
     public string materialType;
     UnityEngine.Material materialReference;
     public string materialName;
+    public bool hasFamilyBlock;
+    public string familyID;
 
     public enum blockType
     {
@@ -25,27 +27,28 @@ public class ObjectColorHandler : MonoBehaviour
     {
         NormalStateReload();
     }
-    private void Update()
+
+    public void NormalStateReload()
     {
+
+        materialReference = this.GetComponent<MeshRenderer>().material;
+        materialName = materialReference.name;
+
         if (materialName == "WhiteMaterial (Instance)" || materialName == "BlackMaterial (Instance)")
         {
             isNormal = true;
         }
-    }
 
-    public void NormalStateReload()
-    {
-        materialReference = this.GetComponent<MeshRenderer>().material;
-        materialName = materialReference.name;
         if (isNormal == true)
         {
             if (materialName == "WhiteMaterial (Instance)")
             {
                 typeReference = blockType.NormalWhite;
             }
-            else if(materialName == "BlackMaterial (Instance)")
+            if(materialName == "BlackMaterial (Instance)")
             {
                 typeReference = blockType.NormalBlack;
+                
             }
         }
         else if (isNormal == false)
