@@ -6,12 +6,17 @@ using UnityEngine;
 public class ObjectColorHandler : MonoBehaviour
 {
     //Variables
+    [Header("Manual variables")]
+    public bool hasFamilyBlock;
+    public string familyID;
+
+    [Header("Automatic variables")]
     public bool isNormal;
     public string materialType;
     UnityEngine.Material materialReference;
     public string materialName;
-    public bool hasFamilyBlock;
-    public string familyID;
+
+
 
     public enum blockType
     {
