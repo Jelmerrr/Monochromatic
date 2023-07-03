@@ -15,7 +15,7 @@ public class ShootController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            int layerMask = 1 << 8;
+            int layerMask = 3; //1 << 8;
             layerMask = ~layerMask; //Layermask ignore player.
             RaycastHit hit;
             if (Physics.Raycast(transform.position, cameraView.transform.forward, out hit, Mathf.Infinity, layerMask))

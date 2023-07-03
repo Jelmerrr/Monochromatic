@@ -17,6 +17,8 @@ public class MovementController : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    public bool hasTeleported;
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
