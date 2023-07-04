@@ -7,6 +7,7 @@ public class TeleportHandler : MonoBehaviour
     public bool activeTeleporter;
     public bool hasActivated;
     public bool rotationDependant;
+    public bool crosses360;
     [Header("If angle crosses 360 degree boundary -> higher rotation.y = minRotation")]
     public float minRotation;
     public float maxRotation;
@@ -40,19 +41,29 @@ public class TeleportHandler : MonoBehaviour
 
         if (activeTeleporter == true && movementController.hasTeleported == false)
         {
-            if (rotationDependant == true && playerObject.transform.eulerAngles.y >= minRotation || playerObject.transform.eulerAngles.y <= maxRotation)
+            if (rotationDependant == true && crosses360 == true)
+            {
+                if (playerObject.transform.eulerAngles.y >= minRotation || playerObject.transform.eulerAngles.y <= maxRotation)
+                {
+                    playerObject.transform.position = teleportTarget.transform.position + getRelativePosition(this.transform, playerObject.transform.position);
+                    hasActivated = true;
+                    teleportTarget.GetComponent<TeleportHandler>().hasActivated = true;
+                }
+            }
+            else if (rotationDependant == true && crosses360 == false && playerObject.transform.eulerAngles.y >= minRotation && playerObject.transform.eulerAngles.y <= maxRotation)
             {
                 playerObject.transform.position = teleportTarget.transform.position + getRelativePosition(this.transform, playerObject.transform.position);
                 hasActivated = true;
+                teleportTarget.GetComponent<TeleportHandler>().hasActivated = true;
             }
         }
 
-        if(rotationDependant == true && movementController.hasTeleported == true)
+        if(rotationDependant == true && movementController.hasTeleported == true && hasActivated == true)
         {
             if(playerObject.transform.eulerAngles.y >= minRotation || playerObject.transform.eulerAngles.y <= maxRotation)
             {
-                //This does nothing unless statement if false then reset teleporter status.
-                //Yes this is really ugly but I have no clue how to otherwise make something trigger ONLY if the statement is false.
+                //This does nothing unless statement is false then reset teleporter status.
+                //Yes this is really ugly but I have no clue how to otherwise make something trigger ONLY after the statement is false.
                 //Negation does not give the desired result, yes I have tried it.
             }
             else

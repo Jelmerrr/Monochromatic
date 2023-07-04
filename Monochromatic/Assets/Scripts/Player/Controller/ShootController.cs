@@ -53,7 +53,7 @@ public class ShootController : MonoBehaviour
                 gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
             }
 
-            if(gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == true)
+            if(gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == true) //Family swap handling
             {
                 string shotFamily = gameObject.GetComponent<ObjectColorHandler>().familyID;
                 ObjectColorHandler[] yep = Resources.FindObjectsOfTypeAll<ObjectColorHandler>();         
@@ -77,7 +77,8 @@ public class ShootController : MonoBehaviour
                 gameObject.GetComponent<MeshRenderer>().material = whiteReference;
                 gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
             }
-            if (gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == true)
+
+            if (gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == true) //Family swap handling
             {
                 string shotFamily = gameObject.GetComponent<ObjectColorHandler>().familyID;
                 ObjectColorHandler[] yep = Resources.FindObjectsOfTypeAll<ObjectColorHandler>();
