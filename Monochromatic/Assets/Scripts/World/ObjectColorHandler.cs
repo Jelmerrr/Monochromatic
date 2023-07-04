@@ -17,7 +17,6 @@ public class ObjectColorHandler : MonoBehaviour
     public string materialName;
 
 
-
     public enum blockType
     {
         NormalWhite,
@@ -35,7 +34,7 @@ public class ObjectColorHandler : MonoBehaviour
 
     public void NormalStateReload()
     {
-
+        //This initializes every object with the correct color data.
         materialReference = this.GetComponent<MeshRenderer>().material;
         materialName = materialReference.name;
 

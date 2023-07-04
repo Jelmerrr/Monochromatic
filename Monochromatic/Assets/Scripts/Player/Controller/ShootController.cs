@@ -15,7 +15,7 @@ public class ShootController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            int layerMask = 1 << 8;
+            int layerMask = 3; //1 << 8;
             layerMask = ~layerMask; //Layermask ignore player.
             RaycastHit hit;
             if (Physics.Raycast(transform.position, cameraView.transform.forward, out hit, Mathf.Infinity, layerMask))
@@ -53,7 +53,7 @@ public class ShootController : MonoBehaviour
                 gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
             }
 
-            if(gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == true)
+            if(gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == true) //Family swap handling
             {
                 string shotFamily = gameObject.GetComponent<ObjectColorHandler>().familyID;
                 ObjectColorHandler[] yep = Resources.FindObjectsOfTypeAll<ObjectColorHandler>();         
@@ -77,7 +77,8 @@ public class ShootController : MonoBehaviour
                 gameObject.GetComponent<MeshRenderer>().material = whiteReference;
                 gameObject.GetComponent<ObjectColorHandler>().NormalStateReload();
             }
-            if (gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == true)
+
+            if (gameObject.GetComponent<ObjectColorHandler>().hasFamilyBlock == true) //Family swap handling
             {
                 string shotFamily = gameObject.GetComponent<ObjectColorHandler>().familyID;
                 ObjectColorHandler[] yep = Resources.FindObjectsOfTypeAll<ObjectColorHandler>();

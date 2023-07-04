@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StateController : MonoBehaviour
 {
+    //This is intended to handle pausing in the future.
     public bool StateFPS = false;
 
 
