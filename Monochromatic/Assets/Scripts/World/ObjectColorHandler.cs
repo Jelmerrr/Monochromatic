@@ -6,11 +6,15 @@ using UnityEngine;
 public class ObjectColorHandler : MonoBehaviour
 {
     //Variables
-    [Header("Manual variables")]
+    [Header("Portal related variables")]
+    public bool isPortal;
+    public string portalID;
+
+    [Header("Family system related variables")]
     public bool hasFamilyBlock;
     public string familyID;
 
-    [Header("Automatic variables")]
+    [Header("Automatic variables (don't touch these)")]
     public bool isNormal;
     public string materialType;
     UnityEngine.Material materialReference;
@@ -34,32 +38,39 @@ public class ObjectColorHandler : MonoBehaviour
 
     public void NormalStateReload()
     {
-        //This initializes every object with the correct color data.
-        materialReference = this.GetComponent<MeshRenderer>().material;
-        materialName = materialReference.name;
+        if (isPortal == true)
+        {
 
-        if (materialName == "WhiteMaterial (Instance)" || materialName == "BlackMaterial (Instance)")
-        {
-            isNormal = true;
         }
+        else
+        {
+            //This initializes every object with the correct color data.
+            materialReference = this.GetComponent<MeshRenderer>().material;
+            materialName = materialReference.name;
 
-        if (isNormal == true)
-        {
-            if (materialName == "WhiteMaterial (Instance)")
+            if (materialName == "WhiteMaterial (Instance)" || materialName == "BlackMaterial (Instance)")
             {
-                typeReference = blockType.NormalWhite;
+                isNormal = true;
             }
-            if(materialName == "BlackMaterial (Instance)")
+
+            if (isNormal == true)
             {
-                typeReference = blockType.NormalBlack;
-                
+                if (materialName == "WhiteMaterial (Instance)")
+                {
+                    typeReference = blockType.NormalWhite;
+                }
+                if (materialName == "BlackMaterial (Instance)")
+                {
+                    typeReference = blockType.NormalBlack;
+
+                }
             }
-        }
-        else if (isNormal == false)
-        {
-            if (materialName == "BlueMaterial (Instance)")
+            else if (isNormal == false)
             {
-                typeReference = blockType.Blue;
+                if (materialName == "BlueMaterial (Instance)")
+                {
+                    typeReference = blockType.Blue;
+                }
             }
         }
     }

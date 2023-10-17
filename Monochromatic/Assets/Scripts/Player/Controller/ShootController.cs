@@ -11,32 +11,86 @@ public class ShootController : MonoBehaviour
     public Material whiteReference;
     public Material blackReference;
 
+    private Vector3 cameraOrientation;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            int layerMask = 3; //1 << 8;
-            layerMask = ~layerMask; //Layermask ignore player.
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, cameraView.transform.forward, out hit, Mathf.Infinity, layerMask))
+            cameraOrientation = cameraView.transform.forward;
+            ShootNormalRaycast(cameraOrientation);
+
+        }
+    }
+
+    private void ShootNormalRaycast(Vector3 cameraOrientation)
+    {
+        int layerMask = 1 << 7;
+        layerMask = ~layerMask; //Layermask ignore player.
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, cameraOrientation, out hit, Mathf.Infinity, layerMask))
+        {
+            tempObject = hit.collider.gameObject;
+            HitLogic(tempObject, hit);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
+            Debug.Log("Did not Hit");
+        }
+    }
+
+    private void ShootPortalRaycast(Vector3 portalPos, Vector3 cameraOrientation)
+    {
+        int layerMask = 1 << 6 | 1 << 7;
+        layerMask = ~layerMask; //Layermask ignore player and portals.
+        RaycastHit hit;
+        if (Physics.Raycast(portalPos, cameraOrientation, out hit, Mathf.Infinity, layerMask))
+        {
+            tempObject = hit.collider.gameObject;
+            HitLogic(tempObject, hit);
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.red);
+            Debug.Log("Did not Hit");
+        }
+    }
+
+    private void HitLogic(GameObject tempObject, RaycastHit hit)
+    {
+        if (tempObject.GetComponent<ObjectColorHandler>().isPortal == true) //Handles portal warping shenanigans.
+        {
+            string portalID = tempObject.GetComponent<ObjectColorHandler>().portalID;
+            ObjectColorHandler[] objectResource = Resources.FindObjectsOfTypeAll<ObjectColorHandler>();
+            for (int i = 0; i < objectResource.Length; i++)
             {
-                tempObject = hit.collider.gameObject;
-                if (tempObject.GetComponent<ObjectColorHandler>().isNormal == true) //If object shot is white/black handle normal procedure.
+                if (objectResource[i].isPortal == true)
                 {
-                    ChangeMaterial(tempObject);
-                }    
-                else if(tempObject.GetComponent<ObjectColorHandler>().isNormal == false) //Add special block handlers below here.
-                {
-                    if(tempObject.GetComponent<ObjectColorHandler>().typeReference == ObjectColorHandler.blockType.Blue) //Blue object handler.
+                    if (objectResource[i].portalID == portalID)
                     {
-                        tempObject.GetComponent<BlueCubeBehavior>().BlueSwap();
-                    }              
+                        Transform locationPortal = objectResource[i].gameObject.GetComponent<BoxCollider>().transform;
+                        if (locationPortal != tempObject.GetComponent<BoxCollider>().transform)
+                        {
+                            Vector3 relativePos = tempObject.GetComponent<BoxCollider>().transform.position - hit.point;
+                            Vector3 newPos = locationPortal.position - relativePos;
+                            locationPortal.GetComponent<BoxCollider>().enabled = false;
+                            ShootPortalRaycast(newPos, cameraOrientation);
+                            locationPortal.GetComponent<BoxCollider>().enabled = true;
+                        }
+                    }
                 }
             }
-            else
+        }
+        else if (tempObject.GetComponent<ObjectColorHandler>().isNormal == true) //If object shot is white/black handle normal procedure.
+        {
+            ChangeMaterial(tempObject);
+        }
+        else if (tempObject.GetComponent<ObjectColorHandler>().isNormal == false) //Add special block handlers below here.
+        {
+            if (tempObject.GetComponent<ObjectColorHandler>().typeReference == ObjectColorHandler.blockType.Blue) //Blue object handler.
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                Debug.Log("Did not Hit");
+                tempObject.GetComponent<BlueCubeBehavior>().BlueSwap();
             }
         }
     }
