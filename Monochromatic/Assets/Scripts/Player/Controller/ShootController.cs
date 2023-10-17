@@ -42,8 +42,8 @@ public class ShootController : MonoBehaviour
 
     private void ShootPortalRaycast(Vector3 portalPos, Vector3 cameraOrientation)
     {
-        int layerMask = 1 << 7;
-        layerMask = ~layerMask; //Layermask ignore player.
+        int layerMask = 1 << 6 | 1 << 7;
+        layerMask = ~layerMask; //Layermask ignore player and portals.
         RaycastHit hit;
         if (Physics.Raycast(portalPos, cameraOrientation, out hit, Mathf.Infinity, layerMask))
         {
