@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Wall2
   isNormal: 0
@@ -286,6 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: FloorFamily
   isNormal: 0
@@ -402,6 +406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 0
   familyID: 
   isNormal: 0
@@ -739,6 +745,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: IllusionWall1
   isNormal: 0
@@ -855,6 +863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: IllusionWall1
   isNormal: 0
@@ -971,6 +981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Wall3
   isNormal: 0
@@ -1087,6 +1099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: FloorFamily
   isNormal: 0
@@ -1305,6 +1319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Teleporter1
   isNormal: 0
@@ -1421,6 +1437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Teleporter1
   isNormal: 0
@@ -1537,6 +1555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Wall3
   isNormal: 0
@@ -1720,6 +1740,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: FloorFamily
   isNormal: 0
@@ -1962,6 +1984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 0
   familyID: 
   isNormal: 0
@@ -2237,6 +2261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 0
   familyID: 
   isNormal: 0
@@ -2391,6 +2417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 0
   familyID: 
   isNormal: 0
@@ -2694,6 +2722,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Wall3
   isNormal: 0
@@ -2904,6 +2934,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Wall2
   isNormal: 0
@@ -3063,6 +3095,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 0
   familyID: 
   isNormal: 0
@@ -3181,6 +3215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 0
   familyID: 
   isNormal: 0
@@ -3466,6 +3502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Ceiling
   isNormal: 0
@@ -3726,6 +3764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: IllusionWall1
   isNormal: 0
@@ -3842,6 +3882,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Ceiling
   isNormal: 0
@@ -3958,6 +4000,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Ceiling
   isNormal: 0
@@ -4293,6 +4337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 0
   familyID: 
   isNormal: 0
@@ -4346,6 +4392,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: IllusionWall1
   isNormal: 0
@@ -4704,6 +4752,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: IllusionWall1
   isNormal: 0
@@ -4842,7 +4892,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5037,6 +5087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: Wall2
   isNormal: 0
@@ -5188,6 +5240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: IllusionWall1
   isNormal: 0
@@ -5385,6 +5439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: IllusionWall1
   isNormal: 0
@@ -5501,6 +5557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: FloorFamily
   isNormal: 0
@@ -5617,6 +5675,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b16648c0998d94f9f4c58c8484edd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPortal: 0
+  portalID: 
   hasFamilyBlock: 1
   familyID: IllusionWall1
   isNormal: 0
