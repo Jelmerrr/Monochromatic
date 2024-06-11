@@ -7,6 +7,7 @@ public class IntroductionScript : MonoBehaviour
 {
     public TextMeshProUGUI introText;
     public TextMeshProUGUI exploreText;
+    public TextMeshProUGUI endingText;
     private int introState = 0;
 
     public Camera cameraView;
@@ -36,6 +37,10 @@ public class IntroductionScript : MonoBehaviour
             {
                 cameraOrientation = cameraView.transform.forward;
                 ShootNormalRaycast(cameraOrientation);
+            }
+            else if(introState == 3)
+            {
+
             }
         }
     }
